@@ -1,0 +1,40 @@
+{
+  "name": "email-composer-server",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Yash Gandhi",
+  "license": "ISC",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "start": "nodemon --exec babel-node app.js",
+    "dev": "NODE_ENV=development PORT=8888 babel-node ./*",
+    "prod": "NODE_ENV=production PORT=8888 babel-node ./dist/*"
+  },
+  "dependencies": {
+    "@graphql-tools/graphql-file-loader": "^6.0.12",
+    "@graphql-tools/load": "^6.0.12",
+    "@graphql-tools/schema": "^6.0.12",
+    "apollo-server": "^2.15.1",
+    "apollo-server-express": "^2.15.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "graphql-depth-limit": "^1.1.0",
+    "graphql-tools": "^6.0.12",
+    "helmet": "^3.23.3",
+    "merge-graphql-schemas": "^1.7.8",
+    "nodemailer": "^6.4.10",
+    "nodemon": "^2.0.4",
+    "pg": "^8.3.0",
+    "sequelize": "^6.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/node": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "rimraf": "^3.0.2"
+  }
+}
